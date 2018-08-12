@@ -14,17 +14,12 @@ BrewdogView.prototype.bindEvents = function () {
 BrewdogView.prototype.render = function (brewdogs) {
 
   brewdogs.forEach((brewdog) => {
-    const beerName = this.createElement('h2', brewdog.name);
+    const beerName = document.createElement('h2');
+    beerName.textContent = brewdog.name
     this.container.appendChild(beerName);
   })
 
 
-};
-
-BrewdogView.prototype.createElement = function (elementType, text) {
-  const element = document.createElement(elementType);
-  element.textContent = text;
-  return element;
 };
 
 module.exports = BrewdogView;

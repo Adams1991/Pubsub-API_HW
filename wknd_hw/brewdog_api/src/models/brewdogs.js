@@ -7,13 +7,13 @@ const Brewdogs = function () {
 
 Brewdogs.prototype.bindEvents = function () {
   PubSub.subscribe('FormView:form-submitted', (event) => {
-    const breed = event.detail;
-    this.getData(breed);
+    const beer = event.detail;
+    this.getData(beer);
   });
 }
 
 Brewdogs.prototype.getData = function (beer_name) {
-  const url = `https://api.punkapi.com/v2/beers/${ beer_name }`;
+  const url = `https://api.punkapi.com/v2/beers?beer_name=${beer_name}`;
   const request = new Request(url);
   request.get()
     .then((data) => {

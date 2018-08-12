@@ -12,22 +12,19 @@ BrewdogView.prototype.bindEvents = function () {
 }
 
 BrewdogView.prototype.render = function (brewdogs) {
-  this.clearBrewdogs();
 
-  Brewdogs.forEach((brewdog) => {
-    const img = this.createImage(Brewdog);
-    this.container.appendChild(img);
-  });
-}
+  brewdogs.forEach((brewdog) => {
+    const beerName = this.createElement('h2', brewdog.name);
+    this.container.appendChild(beerName);
+  })
 
-BrewdogView.prototype.clearBrewdogs = function () {
-  this.container.innerHTML = '';
-}
 
-BrewdogView.prototype.createImage = function (imageUrl) {
-  const img = document.createElement('img');
-  img.src = imageUrl;
-  return img;
-}
+};
+
+BrewdogView.prototype.createElement = function (elementType, text) {
+  const element = document.createElement(elementType);
+  element.textContent = text;
+  return element;
+};
 
 module.exports = BrewdogView;

@@ -18,7 +18,7 @@ Brewdogs.prototype.getData = function (beer_name) {
   request.get()
     .then((data) => {
       this.data = data.message;
-      PubSub.publish('BrewDog:dog-data-loaded', this.data);
+      PubSub.publish('BrewDog:Brewdog-data-loaded', this.data);
     })
     .catch((message) => {
       console.error(message);

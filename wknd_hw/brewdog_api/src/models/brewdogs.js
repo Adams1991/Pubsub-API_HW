@@ -17,12 +17,15 @@ Brewdogs.prototype.getData = function (beer_name) {
   const request = new Request(url);
   request.get()
     .then((data) => {
-      this.data = data.message;
-      PubSub.publish('BrewDog:Brewdog-data-loaded', this.data);
+      this.data = data
+      PubSub.publish('Brewdogs:brewdog-data-loaded', this.data)
     })
     .catch((message) => {
       console.error(message);
     });
 }
+
+
+
 
 module.exports = Brewdogs;

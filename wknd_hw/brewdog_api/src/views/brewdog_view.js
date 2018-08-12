@@ -5,13 +5,14 @@ const BrewdogView = function (container) {
 }
 
 BrewdogView.prototype.bindEvents = function () {
-  PubSub.subscribe('Brewdog:Brewdog-data-loaded', (evt) => {
-    const brewdogs = evt.detail;
+  PubSub.subscribe('Brewdogs:brewdog-data-loaded', (event) => {
+    const brewdogs = event.detail;
     this.render(brewdogs);
   });
 }
 
 BrewdogView.prototype.render = function (brewdogs) {
+  this.container.innerHTML = '';
 
   brewdogs.forEach((brewdog) => {
     const beerName = document.createElement('h2');

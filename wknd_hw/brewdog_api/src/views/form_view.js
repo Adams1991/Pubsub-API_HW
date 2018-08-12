@@ -12,11 +12,12 @@ FormView.prototype.bindEvents = function () {
     this.element.reset();
   });
 
-  // this.element.addEventListener('click', (evt) => {
-  //   evt.preventDefault();
-  //   PubSub.publish('FormView:button-submitted');
-  //   this.element.reset();
-  // });
+
+  const button = document.querySelector('#random-button');
+  button.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    PubSub.publish('FormView:button-click');
+  });
 }
 
 module.exports = FormView;

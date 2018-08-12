@@ -10,6 +10,12 @@ Brewdogs.prototype.bindEvents = function () {
     const beer = event.detail;
     this.getData(beer);
   });
+
+  PubSub.subscribe('FormView:button-click', (event) => {
+    this.getRandomData();
+  });
+
+
 }
 
 Brewdogs.prototype.getData = function (beer_name) {

@@ -13,7 +13,7 @@ Brewdogs.prototype.bindEvents = function () {
 }
 
 Brewdogs.prototype.getData = function (beer_name) {
-  const url = `https://api.punkapi.com/v2/${ beer_name }`;
+  const url = `https://api.punkapi.com/v2/beers/${ beer_name }`;
   const request = new Request(url);
   request.get()
     .then((data) => {

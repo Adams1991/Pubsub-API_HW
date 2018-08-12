@@ -11,6 +11,12 @@ FormView.prototype.bindEvents = function () {
     PubSub.publish('FormView:form-submitted', beer);
     this.element.reset();
   });
+
+  // this.element.addEventListener('click', (evt) => {
+  //   evt.preventDefault();
+  //   PubSub.publish('FormView:button-submitted');
+  //   this.element.reset();
+  // });
 }
 
 module.exports = FormView;

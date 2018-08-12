@@ -14,15 +14,24 @@ BrewdogView.prototype.bindEvents = function () {
 BrewdogView.prototype.render = function (brewdogs) {
   this.container.innerHTML = '';
 
-    brewdogs.forEach((brewdog) => {
-      const beerName = this.createElement('h2', brewdog.name);
-      this.container.appendChild(beerName);
+  const wrongInput= `There ain't no brew for you with this mash up of letters.....sober up and try something different....maybe something that rhymes with cunk.`
 
-      const beerDesc = this.createElement('p', brewdog.description)
-      this.container.appendChild(beerDesc);
+  if (brewdogs.length === 0) {
+  const noBeer = this.createElement('h4', wrongInput )
+  this.container.appendChild(noBeer)
+    } else {
+  brewdogs.forEach((brewdog) => {
+    const beerName = this.createElement('h2', brewdog.name);
+    this.container.appendChild(beerName);
 
+    const beerDesc = this.createElement('p', brewdog.description)
+    this.container.appendChild(beerDesc);
 
-    })
+    const beerAge = this.createElement('h3', `First Brewed: ${brewdog.first_brewed}`)
+    this.container.appendChild(beerAge);
+  })
+}
+
 
 };
 

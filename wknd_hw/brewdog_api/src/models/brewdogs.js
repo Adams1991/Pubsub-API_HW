@@ -25,6 +25,25 @@ Brewdogs.prototype.getData = function (beer_name) {
     });
 }
 
+Brewdogs.prototype.getRandomData = function () {
+  const url = `https://api.punkapi.com/v2/beers/random`;
+  const request = new Request(url);
+  request.get()
+    .then((data) => {
+      this.data = data
+      PubSub.publish('Brewdogs:brewdog-data-loaded', this.data)
+    })
+    .catch((message) => {
+      console.error(message);
+    });
+}
+
+
+
+
+
+
+
 
 
 

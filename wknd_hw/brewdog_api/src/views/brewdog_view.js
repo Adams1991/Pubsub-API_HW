@@ -29,6 +29,9 @@ BrewdogView.prototype.render = function (brewdogs) {
 
     const beerAge = this.createElement('h3', `First Brewed: ${brewdog.first_brewed}`)
     this.container.appendChild(beerAge);
+
+    const beerAbv = this.createElement('h5', `ABV: ${brewdog.abv}%`)
+    this.container.appendChild(beerAbv);
   })
 }
 

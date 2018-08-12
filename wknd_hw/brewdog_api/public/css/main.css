@@ -1,0 +1,21 @@
+body {
+   background-image:url(./images/blue.jpg);
+  font-family: sans-serif;
+  color: white;
+}
+
+select {
+  font-size: 1rem;
+}
+
+
+.button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
